@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Adventure Game</title>
+</head>
+<body>
+    <h1>Welcome to the Text Adventure Game!</h1>
+    <p>You find yourself in a dark room with two doors. Which door do you choose?</p>
+    <form action="" method="post">
+        <label for="door">Choose door (1 or 2):</label>
+        <input type="text" id="door" name="door" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if request.args.get('message') %}
+        <p style="color: red;">{{ request.args.get('message') }}</p>
+    {% endif %}
+</body>
+</html>
